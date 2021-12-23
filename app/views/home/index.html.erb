@@ -1,2 +1,21 @@
-<h1>Crypto</h1>
-<p>Homepage Tings</p>
+<ul>
+
+
+<% for x in @coins['data'] %>
+	<% for coin in @my_coins %>
+		<% if coin == x["symbol"] %>
+			<p>
+				<li>
+					Rank: <%= x["name"] %> <br/>
+					Name: <%= x["name"] %> <br/>
+					Symbol: <%= x["symbol"] %> <br/>
+					Price: $<%= x["quote"]['USD']['price'] %> <br/>
+				</li>
+			</p>
+		<% end %>
+	<% end %>
+<% end %>
+
+
+
+</ul>

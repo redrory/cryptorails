@@ -1,0 +1,29 @@
+<h3>Crypto Search</h3>
+
+<p>
+	<%= form_with url: home_search_path, method: :get do |form| %>
+		<div class = "mb-3">
+		  <%= form.text_field :query, placeholder: "Enter Crypto Symbol", class: "form-control" %>
+		  <%= form.submit "Search", class: "btn btn-primary" %>
+	  </div>
+	<% end %>
+</p>
+
+<br />
+ <%= @symbol%>
+
+ <%= @coins %>
+
+
+ <% for x in @search_coin['data'] %>
+		<% if @symbol == x["symbol"] %>
+			<p>
+				<li>
+					Rank: <%= x["name"] %> <br/>
+					Name: <%= x["name"] %> <br/>
+					Symbol: <%= x["symbol"] %> <br/>
+					Price: $<%= x["quote"]['USD']['price'] %> <br/>
+				</li>
+			</p>
+		<% end %>
+<% end %>

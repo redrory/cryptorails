@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root "home#index"
+  
 
   get "home/about"
+  get "home/search"
+
+  # post "/home/search" => "home/search"
+  root "home#index"
 end
